@@ -1,15 +1,17 @@
 const mongoose = require("mongoose");
 
-const MainPageSchema = new mongoose.Schema(
-  {
-    header:{ type: String },
-    description: { type: String },
-    offer: { type: Object },
-    quotes: { type: Array },
-    groupPhoto: { type: Object },
-  },
-  { versionKey: false }
-);
-const MainPage = mongoose.model("MainPage", MainPageSchema);
-module.exports = { MainPage, MainPageSchema };
+const commonStructureSchema = new mongoose.Schema({
+  main: { type: Object, require:true },
+  weOffer: { type: Object, require:true },
+  quotes: { type: Array, require:true },
+  ourPhoto: { type: Object, require:true },
+}, { _id: false, versionKey: false }); 
 
+const MainPageSchema = new mongoose.Schema({
+  en: commonStructureSchema,
+  ru: commonStructureSchema,
+}, { versionKey: false });
+
+const MainPage = mongoose.model("MainPage", MainPageSchema);
+
+module.exports = { MainPage, MainPageSchema };
