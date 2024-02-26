@@ -5,6 +5,7 @@ const { generateToken } = require("../utils/generateToken");
 exports.login = async (req, res) => {
   try {
     const { email, password } = req.body;
+
     const admin = await Admin.findOne({ email });
     if (!admin)
       return res.status(401).send({ message: "Invalid email or password" });
