@@ -25,13 +25,13 @@ exports.get = async (req, res) => {
   }
 };
 
-exports.uploadImg = async (req, res) => {
-  try {
-    return res.send("sss");
-  } catch (error) {
-    return res.status(400).send({ message: "Something is wrong" });
-  }
-};
+// exports.uploadImg = async (req, res) => {
+//   try {
+//     return res.send("sss");
+//   } catch (error) {
+//     return res.status(400).send({ message: "Something is wrong" });
+//   }
+// };
 
 exports.update = async (req, res) => {
   try {

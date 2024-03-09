@@ -23,5 +23,4 @@ app.listen(process.env.PORT, () =>
   console.log(`App is listening port ${process.env.PORT}`)
 );
 
-// const password = bcrypt.hashSync("host1234!", 10);
-// console.log(password);
+

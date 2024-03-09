@@ -22,7 +22,7 @@ const upload = multer({
 router.post("/main-page", MainPageController.create);
 router.get("/main-page", MainPageController.get);
 router.patch(
-  "/main-page",
+  "/admin/main-page",
   [checkUploadFolder, upload.any(), multerErrorHandler],
   MainPageController.update
 );
